@@ -1,0 +1,582 @@
+<!DOCTYPE html>
+<html class="no-js" lang="en-US">
+
+<head>
+
+    <title>Reservations &#8211; Nadia&#039;s Garden</title>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <link rel='dns-prefetch' href='http://fonts.googleapis.com/' />
+    <link rel='stylesheet' id='genericons-css'  href='../wp-content/plugins/jetpack/_inc/genericons/genericons/genericons.css' type='text/css' media='all' />
+    <link rel='stylesheet' id='wm-google-fonts-css' href='http://fonts.googleapis.com/css?family=Playfair+Display%7CDroid+Serif&amp;subset&amp;ver=2.2.0' type='text/css' media='all' />
+    <link rel='stylesheet' id='wm-main-css' href='../wp-content/themes/auberge/assets/css/main.css' type='text/css' media='all' />
+    <style id='wm-main-inline-css' type='text/css'>
+        body {
+            color: #6a6c6e;
+            background-color: #eaecee
+        }
+        
+        .site,
+        .page-section .posts .entry {
+            background-color: #fff
+        }
+        
+        h1,
+        h2,
+        h3,
+        h4,
+        h5,
+        h6,
+        .h1,
+        .h2,
+        .h3,
+        .h4,
+        .h5,
+        .h6 {
+            color: #1a1c1e
+        }
+        
+        hr,
+        code,
+        pre {
+            background-color: #eaecee;
+            color: #6a6c6e
+        }
+        
+        button,
+        input,
+        select,
+        textarea,
+        tbody tr:hover td,
+        tbody tr:hover th {
+            background-color: rgba(0, 0, 0, 0.05)
+        }
+        
+        .button,
+        button,
+        input[type="button"],
+        input[type="reset"],
+        input[type="submit"] {
+            box-shadow: inset 0 0 0 rgba(0, 0, 0, 0.2)
+        }
+        
+        .button:active,
+        button:active,
+        input[type="button"]:active,
+        input[type="reset"]:active,
+        input[type="submit"]:active {
+            box-shadow: inset 0 100px 0 rgba(0, 0, 0, 0.2)
+        }
+        
+        .gallery-caption,
+        .widget .tagcloud a:before {
+            background-color: #2a2c2e;
+            color: #caccce
+        }
+        
+        .gallery-caption {
+            background-color: rgba(0, 0, 0, 0.8)
+        }
+        
+        ::-webkit-input-placeholder {
+            color: inherit;
+            opacity: .66
+        }
+        
+        ::-moz-placeholder {
+            color: inherit;
+            opacity: .66
+        }
+        
+        :-ms-input-placeholder {
+            color: inherit;
+            opacity: .66
+        }
+        
+        ::placeholder {
+            color: inherit;
+            opacity: .66
+        }
+        
+        :disabled::-webkit-input-placeholder {
+            color: inherit;
+            opacity: .66
+        }
+        
+        :disabled::-moz-placeholder {
+            color: inherit;
+            opacity: .66
+        }
+        
+        :disabled:-ms-input-placeholder {
+            color: inherit;
+            opacity: .66
+        }
+        
+        :disabled::placeholder {
+            color: inherit;
+            opacity: .66
+        }
+        
+        ::-moz-selection {
+            background: #fafcbe;
+            color: #6a6c2e
+        }
+        
+        ::selection {
+            background: #fafcbe;
+            color: #6a6c2e
+        }
+        
+        a,
+        .accent-color {
+            color: #238a44
+        }
+        
+        mark,
+        ins,
+        .highlight,
+        pre::before,
+        .pagination a,
+        .pagination span,
+        .label-sticky,
+        .button,
+        button,
+        form button,
+        .fl-node-content button,
+        input[type="button"],
+        input[type="reset"],
+        input[type="submit"],
+        .menu-group-nav a,
+        .post-navigation .nav-previous,
+        .post-navigation .nav-next,
+        .bypostauthor > .comment-body .comment-author::before,
+        .comment-navigation a,
+        .widget_calendar tbody a,
+        .widget .tagcloud a:hover,
+        body #infinite-handle span,
+        .rtb-message,
+        .site-content div.sharedaddy .sd-content ul li a.sd-button:not(.no-text) {
+            background-color: #238a44;
+            color: #ffffff
+        }
+        
+        mark,
+        ins,
+        .highlight {
+            box-shadow: .38em 0 0 #238a44, -.38em 0 0 #238a44
+        }
+        
+        .post-navigation .nav-previous::before {
+            background: #238a44;
+            background: linear-gradient( to left, transparent 19%, #238a44 81%)
+        }
+        
+        [dir="rtl"] .post-navigation .nav-previous::before {
+            background: linear-gradient( to right, transparent 19%, #238a44 81%)
+        }
+        
+        .post-navigation .nav-next::before {
+            background: #238a44;
+            background: linear-gradient( to right, transparent 19%, #238a44 81%)
+        }
+        
+        [dir="rtl"] .post-navigation .nav-next::before {
+            background: linear-gradient( to left, transparent 19%, #238a44 81%)
+        }
+        
+        .site-header {
+            background-color: #238a44;
+            color: #ffffff
+        }
+        
+        .nav-search-form .form-search {
+            background-color: #238a44
+        }
+        
+        .nav-search-form .search-field {
+            background-color: #fff;
+            color: #6a6c6e
+        }
+        
+        .main-navigation {
+            border-color: #4a4c4e
+        }
+        
+        .main-navigation li ul {
+            background-color: #3a3c3e;
+            color: #fff
+        }
+        
+        .main-navigation .menu li li:hover > a,
+        .main-navigation .menu li li > a:hover,
+        .main-navigation .menu li li.active-menu-item > a {
+            background-color: #4a4c4e
+        }
+        
+        @media only screen and (max-width:54.9375em) {
+            .main-navigation-inner {
+                background-color: #3a3c3e
+            }
+            .main-navigation ul a {
+                color: #fff
+            }
+            .main-navigation .menu a:hover,
+            .main-navigation .menu li:hover > a,
+            .main-navigation .menu li li:hover > a,
+            .main-navigation .menu li.active-menu-item > a,
+            .main-navigation .menu li li.active-menu-item > a {
+                background: transparent;
+                color: #fff
+            }
+            .main-navigation .menu li.current-menu-item > a,
+            .main-navigation .menu li li.current-menu-item > a {
+                background-color: #4a4c4e
+            }
+            .menu-toggle,
+            .menu-toggle:hover,
+            .menu-toggle:active,
+            .menu-toggle:focus {
+                background: transparent
+            }
+            .menu-toggle::before {
+                background: #238a44
+            }
+        }
+        
+        .site-banner {
+            background-color: #1a1c1e;
+            color: #ffffff
+        }
+        
+        .custom-banner::before,
+        .site-banner-media::before {
+            background: transparent;
+            background: linear-gradient( transparent, #1a1c1e)
+        }
+        
+        .front-page-widgets-wrapper {
+            background-color: #1a1c1e;
+            color: #8a8c8e
+        }
+        
+        .site-footer {
+            background-color: #1a1c1e;
+            color: #8a8c8e
+        }
+        
+        .infinite-loader .spinner > div > div {
+            background-color: #238a44 !important
+        }
+        
+        .site-content div.sharedaddy .sd-content ul li a.sd-button:not(.no-text) {
+            color: #ffffff !important
+        }
+        
+        .site {
+            border-color: #eaecee
+        }
+        
+        input:focus,
+        select:focus,
+        textarea:focus,
+        .label-sticky::before,
+        .label-sticky::after,
+        .posts .entry:hover,
+        .widget .tagcloud a:hover,
+        .site .picker__input.picker__input--active {
+            border-color: #238a44
+        }
+        
+        html {
+            font-family: 'Playfair Display', 'Helvetica Neue', Helvetica, Arial, sans-serif;
+            font-size: 18px;
+        }
+        
+        h1,
+        h2,
+        h3,
+        h4,
+        h5,
+        h6,
+        .h1,
+        .h2,
+        .h3,
+        .h4,
+        .h5,
+        .h6 {
+            font-family: 'Droid Serif', 'Helvetica Neue', Helvetica, Arial, sans-serif;
+        }
+        
+        .site-title {
+            font-family: 'Playfair Display', 'Helvetica Neue', Helvetica, Arial, sans-serif;
+        }
+    </style>
+    <link rel='stylesheet' id='wm-stylesheet-css' href='../wp-content/themes/auberge/style.css' type='text/css' media='all' />
+    <script type='text/javascript' src='../wp-includes/js/jquery/jquery.js'></script>
+</head>
+
+<body id="top" class="has-post-thumbnail is-singular not-front-page page page-id-10 page-template-default">
+
+    <div id="page" class="hfeed site">
+
+        <header id="masthead" class="site-header" role="banner" itemscope itemtype="https://schema.org/WPHeader">
+            <div class="site-header-inner">
+
+                <div class="site-branding">
+                    <h2 class="screen-reader-text">Reservations &#8211; Nadia&#039;s Garden</h2><a id="site-title" class="site-title logo type-text" href="../index.html" title="Nadia&#039;s Garden" rel="home"><span class="text-logo">Nadia&#039;s Garden</span></a></div>
+                <nav id="site-navigation" class="main-navigation" role="navigation" aria-labelledby="site-navigation-label" itemscope itemtype="https://schema.org/SiteNavigationElement">
+
+                    <h2 class="screen-reader-text" id="site-navigation-label">Primary Menu</h2>
+
+                    <div id="main-navigation-inner" class="main-navigation-inner">
+
+                        <div class="menu">
+                            <ul>
+                                <li id="menu-item-75" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-75"><a href="../index.html">Home</a></li>
+                                <li id="menu-item-76" class="menu-item menu-item-type-post_type menu-item-object-page current-menu-item page_item page-item-10 current_page_item menu-item-76 active-menu-item"><a href="../#">Reservations</a></li>
+                            </ul>
+                        </div>
+
+                    </div>
+
+                    <button id="menu-toggle" class="menu-toggle" aria-controls="site-navigation" aria-expanded="false">Menu</button>
+
+                </nav>
+
+            </div>
+        </header>
+
+        <div id="content" class="site-content">
+            <div id="primary" class="content-area">
+                <main id="main" class="site-main clearfix" role="main" itemprop="mainContentOfPage">
+
+                    <article role="article" id="post-10" class="post-10 page type-page status-publish has-post-thumbnail hentry entry" itemscope itemtype="https://schema.org/WebPage">
+
+                        <meta itemscope itemprop="mainEntityOfPage" itemType="https://schema.org/WebPage" />
+                        <div class="entry-media">
+                            <figure class="post-thumbnail" itemprop="image" itemscope itemtype="https://schema.org/ImageObject">
+                                <a href="../#"><img width="632" height="422" src="../wp-content/uploads/2015/08/Interior-184668449-1024x683.jpg" class="attachment-large size-large wp-post-image" alt="Nadia&#039;s Garden Interior shot" srcset="../wp-content/uploads/2015/08/Interior-184668449-1024x683.jpg 1024w, ../wp-content/uploads/2015/08/Interior-184668449-300x200.jpg 300w" sizes="(max-width: 632px) 100vw, 632px" />
+                                    <meta itemprop="url" content="http://587672.youcanlearnit.net/wp-content/uploads/2015/08/Interior-184668449-1024x683.jpg" />
+                                    <meta itemprop="width" content="true" />
+                                    <meta itemprop="height" content="true" />
+                                </a>
+                            </figure>
+                        </div>
+                        <header class="entry-header">
+                            <h1 class="entry-title" itemprop="headline">Reservations</h1></header>
+                        <div class="entry-content" itemprop="description">
+
+                            <p>To make reservations please fill out the following form or call us at <a href="tel:123-456-7890">123-456-7890</a>.</p>
+                            <p>We can host your large private or corporate party! For more information about reserving space for events of 40 people or more, call, fill out or contact form, or come visit us in person.</p>
+
+                            <div class="rtb-booking-form">
+                                <form method="POST" action="../#">
+                                    <input type="hidden" name="action" value="booking_request">
+
+                                    <fieldset class="reservation">
+
+                                        <legend>
+                                            Book a table </legend>
+
+                                        <div class="rtb-text date">
+                                            <label for="rtb-date">
+                                                Date </label>
+                                            <input type="text" name="rtb-date" id="rtb-date" value="" required aria-required="true">
+                                        </div>
+
+                                        <div class="rtb-text time">
+                                            <label for="rtb-time">
+                                                Time </label>
+                                            <input type="text" name="rtb-time" id="rtb-time" value="" required aria-required="true">
+                                        </div>
+
+                                        <div class="rtb-select party">
+                                            <label for="rtb-party">
+                                                Party </label>
+                                            <select name="rtb-party" id="rtb-party" required aria-required="true">
+                                                <option value="1">1</option>
+                                                <option value="2">2</option>
+                                                <option value="3">3</option>
+                                                <option value="4">4</option>
+                                                <option value="5">5</option>
+                                                <option value="6">6</option>
+                                                <option value="7">7</option>
+                                                <option value="8">8</option>
+                                            </select>
+                                        </div>
+
+                                    </fieldset>
+                                    <fieldset class="contact">
+
+                                        <legend>
+                                            Contact Details </legend>
+
+                                        <div class="rtb-text name">
+                                            <label for="rtb-name">
+                                                Name </label>
+                                            <input type="text" name="rtb-name" id="rtb-name" value="" required aria-required="true">
+                                        </div>
+
+                                        <div class="rtb-text email">
+                                            <label for="rtb-email">
+                                                Email </label>
+                                            <input type="email" name="rtb-email" id="rtb-email" value="" required aria-required="true">
+                                        </div>
+
+                                        <div class="rtb-text phone">
+                                            <label for="rtb-phone">
+                                                Phone </label>
+                                            <input type="tel" name="rtb-phone" id="rtb-phone" value="">
+                                        </div>
+
+                                        <div class="add-message">
+                                            <a href="../##">
+			Add a Message		</a>
+                                        </div>
+
+                                        <div class="rtb-textarea message">
+                                            <label for="rtb-message">
+                                                Message </label>
+                                            <textarea name="rtb-message" id="rtb-message"></textarea>
+                                        </div>
+
+                                    </fieldset>
+
+                                    <button type="submit">Request Booking</button>
+
+                                </form>
+                            </div>
+
+                        </div>
+
+                    </article>
+
+                    <aside id="secondary" class="widget-area sidebar" role="complementary" aria-labelledby="sidebar-label" itemscope itemtype="https://schema.org/WPSideBar">
+
+                        <h2 class="screen-reader-text" id="sidebar-label">Sidebar</h2>
+
+                        <a href="../##" id="toggle-mobile-sidebar" class="toggle-mobile-sidebar button" aria-controls="secondary" aria-expanded="false">Toggle sidebar</a>
+
+                        <div id="text-4" class="widget widget_text">
+                            <h3 class="widget-title">Welcome to Nadia&#8217;s Garden Restaurant</h3>
+                            <div class="textwidget">Nadia’s Garden Restaurant isn’t just about dining. We’re about creating memorable experiences that our guest will cherish! Our family friendly restaurant has indoor, outdoor, and intimate dining options for any occasion. Our outdoor garden area is perfect for a stroll before or after your meal. We invite you to come dine with us! </div>
+                        </div>
+                    </aside>
+
+                </main>
+                <!-- /#main -->
+            </div>
+            <!-- /#primary -->
+        </div>
+        <!-- /#content -->
+
+        <footer id="colophon" class="site-footer" itemscope itemtype="https://schema.org/WPFooter">
+
+            <div class="site-footer-area footer-area-footer-widgets">
+
+                <div id="footer-widgets" class="footer-widgets clearfix">
+
+                    <aside id="footer-widgets-container" class="widget-area footer-widgets-container" role="complementary" aria-labelledby="sidebar-footer-label">
+
+                        <h2 class="screen-reader-text" id="sidebar-footer-label">Footer sidebar</h2>
+
+                        <div id="media_image-3" class="widget widget_media_image">
+                            <figure style="width: 600px" class="wp-caption alignnone"><img width="600" height="428" src="../wp-content/uploads/2015/08/Exterior-178856892.jpg" class="image wp-image-68 alignnone attachment-full size-full" alt="Nadia&#039;s Garden Restaurant in Carpinteria, California" style="max-width: 100%; height: auto;" />
+                                <figcaption class="wp-caption-text">Romantic Restaurant</figcaption>
+                            </figure>
+                        </div>
+                        <div id="widget_contact_info-4" class="widget widget_contact_info">
+                            <h3 class="widget-title">Hours &amp; Info</h3>
+                            <div class="confit-address"><a href="https://maps.google.com/maps?z=16&#038;q=6410+via+real+carpinteria,+ca+93013" target="_blank">6410 Via Real
+<br/>Carpinteria, CA 93013</a></div>
+                            <div class="confit-phone">1-123-456-7890</div>
+                            <div class="confit-hours">Lunch: 11am - 2pm
+                                <br/>Dinner: M-Th 5pm - 11pm, Fri-Sat:5pm - 1am</div>
+                        </div>
+                    </aside>
+
+                </div>
+
+            </div>
+
+        </footer>
+
+    </div>
+    <!-- /#page -->
+
+    <link rel='stylesheet' id='rtb-booking-form-css' href='../wp-content/plugins/restaurant-reservations/assets/css/booking-form.css' type='text/css' media='all' />
+    <link rel='stylesheet' id='pickadate-default-css' href='../wp-content/plugins/restaurant-reservations/lib/simple-admin-pages/lib/pickadate/themes/default.css' type='text/css' media='all' />
+    <link rel='stylesheet' id='pickadate-date-css' href='../wp-content/plugins/restaurant-reservations/lib/simple-admin-pages/lib/pickadate/themes/default.date.css' type='text/css' media='all' />
+    <link rel='stylesheet' id='pickadate-time-css' href='../wp-content/plugins/restaurant-reservations/lib/simple-admin-pages/lib/pickadate/themes/default.time.css' type='text/css' media='all' />
+    <script type='text/javascript' src='../wp-includes/js/imagesloaded.min.js'></script>
+    <script type='text/javascript'>
+        /* <![CDATA[ */
+        var $scriptsInline = {
+            "text_menu_group_nav": "\u2191 Menu sections"
+        };
+        /* ]]> */
+    </script>
+    <script type='text/javascript' src='../wp-content/themes/auberge/assets/js/scripts-global.js'></script>
+    <script type='text/javascript' src='../wp-content/themes/auberge/assets/js/skip-link-focus-fix.js'></script>
+    <script type='text/javascript' src='../wp-includes/js/wp-embed.min.js'></script>
+    <script type='text/javascript' src='../wp-content/plugins/restaurant-reservations/lib/simple-admin-pages/lib/pickadate/picker.js'></script>
+    <script type='text/javascript' src='../wp-content/plugins/restaurant-reservations/lib/simple-admin-pages/lib/pickadate/picker.date.js'></script>
+    <script type='text/javascript' src='../wp-content/plugins/restaurant-reservations/lib/simple-admin-pages/lib/pickadate/picker.time.js'></script>
+    <script type='text/javascript' src='../wp-content/plugins/restaurant-reservations/lib/simple-admin-pages/lib/pickadate/legacy.js'></script>
+    <script type='text/javascript'>
+        /* <![CDATA[ */
+        var rtb_pickadate = {
+            "date_format": "mmmm d, yyyy",
+            "time_format": "h:i A",
+            "disable_dates": [1],
+            "schedule_open": [{
+                "weekdays": {
+                    "monday": "1",
+                    "tuesday": "1",
+                    "wednesday": "1",
+                    "thursday": "1",
+                    "friday": "1",
+                    "saturday": "1"
+                },
+                "time": {
+                    "start": "11:00 AM",
+                    "end": "2:00 PM"
+                }
+            }, {
+                "weekdays": {
+                    "monday": "1",
+                    "tuesday": "1",
+                    "wednesday": "1",
+                    "thursday": "1"
+                },
+                "time": {
+                    "start": "5:00 PM",
+                    "end": "11:00 PM"
+                }
+            }, {
+                "weekdays": {
+                    "friday": "1",
+                    "saturday": "1"
+                },
+                "time": {
+                    "start": "5:00 PM",
+                    "end": "1:00 AM"
+                }
+            }],
+            "schedule_closed": null,
+            "early_bookings": "14",
+            "late_bookings": "60",
+            "date_onload": "soonest",
+            "time_interval": "30",
+            "first_day": null,
+            "allow_past": ""
+        };
+        /* ]]> */
+    </script>
+    <script type='text/javascript' src='../wp-content/themes/auberge/assets/js/scripts-navigation.js'></script>
+    <script type='text/javascript' src='../wp-content/plugins/restaurant-reservations/assets/js/booking-form.js'></script>
+
+</body>
+
+</html>
