@@ -5,12 +5,12 @@ html.no-js(lang='en-US')
     meta(charset='UTF-8')
     meta(name='viewport', content='width=device-width, initial-scale=1')
     link(rel='dns-prefetch', href='//fonts.googleapis.com/')
-    link#genericons-css(rel='stylesheet', href='/wp-content/plugins/genericons/genericons.css', type='text/css', media='all')
-    link#wm-google-fonts-css(rel='stylesheet', href='//fonts.googleapis.com/css?family=Playfair+Display%7CDroid+Serif&subset&ver=2.2.0', type='text/css', media='all')
-    link#wm-main-css(rel='stylesheet', href='/wp-content/themes/auberge/assets/css/main.css', type='text/css', media='all')
+    link#genericons-css(rel='stylesheet', href='/wp-content/plugins/genericons/genericons.css')
+    link#wm-google-fonts-css(rel='stylesheet', href='//fonts.googleapis.com/css?family=Playfair+Display%7CDroid+Serif&subset&ver=2.2.0')
+    link#wm-main-css(rel='stylesheet', href='/wp-content/themes/auberge/assets/css/main.css')
     link(rel='stylesheet', href='./stylesheets/style.css')
-    link#wm-stylesheet-css(rel='stylesheet', href='/wp-content/themes/auberge/style.css', type='text/css', media='all')
-    script(type='text/javascript', src='/wp-includes/js/jquery/jquery.js')
+    link#wm-stylesheet-css(rel='stylesheet', href='/wp-content/themes/auberge/style.css')
+    script(src='/wp-includes/js/jquery/jquery.js')
   body#top.has-post-thumbnail.is-singular.not-front-page.page.page-id-10.page-template-default
     #page.hfeed.site
       header#masthead.site-header(role='banner', itemscope='', itemtype='https://schema.org/WPHeader')
@@ -50,64 +50,9 @@ html.no-js(lang='en-US')
                   | .
                 p
                   | We can host your large private or corporate party! For more information about reserving space for events of 40 people or more, call, fill out or contact form, or come visit us in person.
-                .rtb-booking-form
-                  if errors
-                    .rtb-message.error
-                      | Sorry, there was a problem with your booking request.
-                      ul
-                        for error in errors
-                          li!= error.msg
-                  if success
-                    .rtb-message
-                      | Thanks, your booking request is waiting to be confirmed. Updates will be sent to the email address you provided.
-                  else
-                    form(method='POST', action='')
-                      fieldset.reservation
-                        legend
-                          | Book a table
-                        .rtb-text.date
-                          label(for='date')
-                            | Date
-                          input#rtb-date(type='text', name='date', value=(undefined === submission ? '' : submission.date), required='', aria-required='true')
-                        .rtb-text.time
-                          label(for='time')
-                            | Time
-                          input#rtb-time(type='text', name='time', value=(undefined === submission ? '' : submission.time), required='', aria-required='true')
-                        .rtb-select.party
-                          label(for='party')
-                            | Party
-                          select#rtb-party(name='party', value=(undefined === submission ? '' : submission.date), required='', aria-required='true')
-                            option(value='1') 1
-                            option(value='2') 2
-                            option(value='3') 3
-                            option(value='4') 4
-                            option(value='5') 5
-                            option(value='6') 6
-                            option(value='7') 7
-                            option(value='8') 8
-                      fieldset.contact
-                        legend
-                          | Contact Details
-                        .rtb-text.name
-                          label(for='name')
-                            | Name
-                          input#rtb-name(type='text', name='name', value=(undefined === submission ? '' : submission.name), required='', aria-required='true')
-                        .rtb-text.email
-                          label(for='email')
-                            | Email
-                          input#rtb-email(type='email', name='email', value=(undefined === submission ? '' : submission.email), required='', aria-required='true')
-                        .rtb-text.phone
-                          label(for='phone')
-                            | Phone
-                          input#rtb-phone(type='tel', name='phone', value=(undefined === submission ? '' : submission.phone))
-                        .add-message
-                          a(href='/##')
-                            | Add a Message
-                        .rtb-textarea.message
-                          label(for='message')
-                            | Message
-                          textarea#rtb-message(name='message') #{(undefined === submission ? '' : submission.message)}
-                      button(type='submit') Request Booking
+                
+                include reservationForm
+                
             aside#secondary.widget-area.sidebar(role='complementary', aria-labelledby='sidebar-label', itemscope='', itemtype='https://schema.org/WPSideBar')
               h2#sidebar-label.screen-reader-text Sidebar
               a#toggle-mobile-sidebar.toggle-mobile-sidebar.button(href='/##', aria-controls='secondary', aria-expanded='false') Toggle sidebar
@@ -140,18 +85,18 @@ html.no-js(lang='en-US')
                   br
                   | Dinner: M-Th 5pm - 11pm, Fri-Sat:5pm - 1am
     // /#page
-    link#rtb-booking-form-css(rel='stylesheet', href='/wp-content/plugins/restaurant-reservations/assets/css/booking-form.css', type='text/css', media='all')
-    link#pickadate-default-css(rel='stylesheet', href='/wp-content/plugins/restaurant-reservations/lib/simple-admin-pages/lib/pickadate/themes/default.css', type='text/css', media='all')
-    link#pickadate-date-css(rel='stylesheet', href='/wp-content/plugins/restaurant-reservations/lib/simple-admin-pages/lib/pickadate/themes/default.date.css', type='text/css', media='all')
-    link#pickadate-time-css(rel='stylesheet', href='/wp-content/plugins/restaurant-reservations/lib/simple-admin-pages/lib/pickadate/themes/default.time.css', type='text/css', media='all')
-    script(type='text/javascript', src='/wp-includes/js/imagesloaded.min.js')
-    script(type='text/javascript', src='/wp-content/themes/auberge/assets/js/scripts-global.js')
-    script(type='text/javascript', src='/wp-content/themes/auberge/assets/js/skip-link-focus-fix.js')
-    script(type='text/javascript', src='/wp-includes/js/wp-embed.min.js')
-    script(type='text/javascript', src='/wp-content/plugins/restaurant-reservations/lib/simple-admin-pages/lib/pickadate/picker.js')
-    script(type='text/javascript', src='/wp-content/plugins/restaurant-reservations/lib/simple-admin-pages/lib/pickadate/picker.date.js')
-    script(type='text/javascript', src='/wp-content/plugins/restaurant-reservations/lib/simple-admin-pages/lib/pickadate/picker.time.js')
-    script(type='text/javascript', src='/wp-content/plugins/restaurant-reservations/lib/simple-admin-pages/lib/pickadate/legacy.js')
-    script(type='text/javascript', src='/javascripts/reservations.js')
-    script(type='text/javascript', src='/wp-content/themes/auberge/assets/js/scripts-navigation.js')
-    script(type='text/javascript', src='/wp-content/plugins/restaurant-reservations/assets/js/booking-form.js')
+    link#rtb-booking-form-css(rel='stylesheet', href='/wp-content/plugins/restaurant-reservations/assets/css/booking-form.css')
+    link#pickadate-default-css(rel='stylesheet', href='/wp-content/plugins/restaurant-reservations/lib/simple-admin-pages/lib/pickadate/themes/default.css')
+    link#pickadate-date-css(rel='stylesheet', href='/wp-content/plugins/restaurant-reservations/lib/simple-admin-pages/lib/pickadate/themes/default.date.css')
+    link#pickadate-time-css(rel='stylesheet', href='/wp-content/plugins/restaurant-reservations/lib/simple-admin-pages/lib/pickadate/themes/default.time.css')
+    script(src='/wp-includes/js/imagesloaded.min.js')
+    script(src='/wp-content/themes/auberge/assets/js/scripts-global.js')
+    script(src='/wp-content/themes/auberge/assets/js/skip-link-focus-fix.js')
+    script(src='/wp-includes/js/wp-embed.min.js')
+    script(src='/wp-content/plugins/restaurant-reservations/lib/simple-admin-pages/lib/pickadate/picker.js')
+    script(src='/wp-content/plugins/restaurant-reservations/lib/simple-admin-pages/lib/pickadate/picker.date.js')
+    script(src='/wp-content/plugins/restaurant-reservations/lib/simple-admin-pages/lib/pickadate/picker.time.js')
+    script(src='/wp-content/plugins/restaurant-reservations/lib/simple-admin-pages/lib/pickadate/legacy.js')
+    script(src='/javascripts/reservations.js')
+    script(src='/wp-content/themes/auberge/assets/js/scripts-navigation.js')
+    script(src='/wp-content/plugins/restaurant-reservations/assets/js/booking-form.js')

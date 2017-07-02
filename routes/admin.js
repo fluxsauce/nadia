@@ -1,6 +1,6 @@
 var express = require('express');
 var router = express.Router();
-var debug = require('debug')('nadia:debug')
+var debug = require('debug')('nadia:route:admin')
 const db = require('sqlite');
 const _ = require('lodash');
 
