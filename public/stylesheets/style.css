@@ -148,6 +148,10 @@ body #infinite-handle span,
     color: #ffffff
 }
 
+.rtb-message.error {
+  background-color: #FF0000
+}
+
 mark,
 ins,
 .highlight {
