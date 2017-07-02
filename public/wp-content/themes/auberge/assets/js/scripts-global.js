@@ -18,7 +18,9 @@
  */
 
 
-
+ var $scriptsInline = {
+		 "text_menu_group_nav": "\u2191 Menu sections"
+ };
 
 
 ( function( $ ) {

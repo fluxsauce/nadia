@@ -5,6 +5,10 @@ const db = require('sqlite');
 
 /* GET reservations listing. */
 router.get('/', function(req, res, next) {
+  res.render('reservations', { title: 'Reservations – Nadia\'s Garden' });
+});
+
+router.post('/', function(req, res, next) {
   const values = [
     'July 3 2017 05BUG0pm',
     3,
