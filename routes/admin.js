@@ -10,8 +10,8 @@ router.get('/', function(req, res, next) {
     .then((reservations) => {
       debug(reservations);
       debug(_.keys(reservations[0]));
-      res.render('debug', {
-        title: 'Requests - Nadia\'s Garden',
+      res.render('admin', {
+        title: 'Booking Requests - Nadia\'s Garden',
         reservations,
         header: _.keys(reservations[0])
       });

@@ -6,8 +6,10 @@ var cookieParser = require('cookie-parser');
 var bodyParser = require('body-parser');
 
 var index = require('./routes/index');
-var debug = require('./routes/debug');
+var admin = require('./routes/admin');
 var reservations = require('./routes/reservations');
+
+const auth = require('./lib/auth.js');
 
 var app = express();
 
@@ -24,7 +26,11 @@ app.use(cookieParser());
 app.use(express.static(path.join(__dirname, 'public')));
 
 app.use('/', index);
-app.use('/debug', debug);
+
+// Impenetrable security.
+app.use('/admin', auth('admin', 'admin'))
+app.use('/admin', admin);
+
 app.use('/reservations', reservations);
 
 // catch 404 and forward to error handler
