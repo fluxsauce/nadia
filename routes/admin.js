@@ -8,8 +8,6 @@ const _ = require('lodash');
 router.get('/', function(req, res, next) {
   db.all('SELECT * FROM Reservation')
     .then((reservations) => {
-      debug(reservations);
-      debug(_.keys(reservations[0]));
       res.render('admin', {
         title: 'Booking Requests - Nadia\'s Garden',
         reservations,
