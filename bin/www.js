@@ -38,7 +38,7 @@ var server = http.createServer(app);
    })
    .then(() => {
      debug('sqlite connected')
-     
+
      server.listen(port);
      server.on('error', onError);
      server.on('listening', onListening);

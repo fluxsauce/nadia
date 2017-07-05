@@ -2,15 +2,15 @@
   "name": "nadia",
   "version": "1.0.0",
   "description": "Nadia's Garden Reservations",
-  "main": "./bin/www.js",
+  "main": "bin/www",
   "repository": "git@github.com:fluxsauce/nadia.git",
   "author": "Jon Peck <jpeck@fluxsauce.com>",
   "license": "MIT",
   "private": true,
   "scripts": {
     "debug": "DEBUG=nadia:* nodemon",
-    "start": "node ./bin/www.js",
-    "lint": "eslint ."
+    "start": "node bin/www",
+    "eslint": "eslint"
   },
   "dependencies": {
     "basic-auth": "^1.1.0",
