@@ -5,12 +5,12 @@ html.no-js(lang='en-US')
     meta(charset='UTF-8')
     meta(name='viewport', content='width=device-width, initial-scale=1')
     link(rel='dns-prefetch', href='//fonts.googleapis.com/')
-    link#genericons-css(rel='stylesheet', href='/wp-content/plugins/genericons/genericons.css')
+    link#genericons-css(rel='stylesheet', href='/contrib/css/genericons/genericons.css')
     link#wm-google-fonts-css(rel='stylesheet', href='//fonts.googleapis.com/css?family=Playfair+Display%7CDroid+Serif&subset&ver=2.2.0')
-    link#wm-main-css(rel='stylesheet', href='/wp-content/themes/auberge/assets/css/main.css')
-    link(rel='stylesheet', href='./stylesheets/style.css')
-    link#wm-stylesheet-css(rel='stylesheet', href='/wp-content/themes/auberge/style.css')
-    script(src='/wp-includes/js/jquery/jquery.js')
+    link#wm-main-css(rel='stylesheet', href='/contrib/css/main.css')
+    link(rel='stylesheet', href='/stylesheets/style.css')
+    link#wm-stylesheet-css(rel='stylesheet', href='/contrib/css/style.css')
+    script(src='/contrib/js/jquery/jquery.js')
   body#top.has-post-thumbnail.is-singular.not-front-page.page.page-id-10.page-template-default
     #page.hfeed.site
       header#masthead.site-header(role='banner', itemscope='', itemtype='https://schema.org/WPHeader')
@@ -37,22 +37,22 @@ html.no-js(lang='en-US')
               .entry-media
                 figure.post-thumbnail(itemprop='image', itemscope='', itemtype='https://schema.org/ImageObject')
                   a
-                    img.attachment-large.size-large.wp-post-image(width='632', height='422', src='./images/Interior-184668449-1024x683.jpg', alt="Nadia's Garden Interior shot", srcset='./images/Interior-184668449-1024x683.jpg 1024w, ./images/Interior-184668449-300x200.jpg 300w', sizes='(max-width: 632px) 100vw, 632px')
-                    meta(itemprop='url', content='./images/Interior-184668449-1024x683.jpg')
+                    img.attachment-large.size-large.wp-post-image(width='632', height='422', src='/images/Interior-184668449-1024x683.jpg', alt="Nadia's Garden Interior shot", srcset='/images/Interior-184668449-1024x683.jpg 1024w, /images/Interior-184668449-300x200.jpg 300w', sizes='(max-width: 632px) 100vw, 632px')
+                    meta(itemprop='url', content='/images/Interior-184668449-1024x683.jpg')
                     meta(itemprop='width', content='true')
                     meta(itemprop='height', content='true')
               header.entry-header
                 h1.entry-title(itemprop='headline') Reservations
               .entry-content(itemprop='description')
                 p
-                  | To make reservations please fill out the following form or call us at 
+                  | To make reservations please fill out the following form or call us at
                   a(href='tel:123-456-7890') 123-456-7890
                   | .
                 p
                   | We can host your large private or corporate party! For more information about reserving space for events of 40 people or more, call, fill out or contact form, or come visit us in person.
-                
+
                 include reservationForm
-                
+
             aside#secondary.widget-area.sidebar(role='complementary', aria-labelledby='sidebar-label', itemscope='', itemtype='https://schema.org/WPSideBar')
               h2#sidebar-label.screen-reader-text Sidebar
               a#toggle-mobile-sidebar.toggle-mobile-sidebar.button(href='/##', aria-controls='secondary', aria-expanded='false') Toggle sidebar
@@ -70,7 +70,7 @@ html.no-js(lang='en-US')
               h2#sidebar-footer-label.screen-reader-text Footer sidebar
               #media_image-3.widget.widget_media_image
                 figure.wp-caption.alignnone(style='width: 600px')
-                  img.image.wp-image-68.alignnone.attachment-full.size-full(width='600', height='428', src='./images/Exterior-178856892.jpg', alt="Nadia's Garden Restaurant in Carpinteria, California", style='max-width: 100%; height: auto;')
+                  img.image.wp-image-68.alignnone.attachment-full.size-full(width='600', height='428', src='/images/Exterior-178856892.jpg', alt="Nadia's Garden Restaurant in Carpinteria, California", style='max-width: 100%; height: auto;')
                   figcaption.wp-caption-text Romantic Restaurant
               #widget_contact_info-4.widget.widget_contact_info
                 h3.widget-title Hours & Info
@@ -85,18 +85,17 @@ html.no-js(lang='en-US')
                   br
                   | Dinner: M-Th 5pm - 11pm, Fri-Sat:5pm - 1am
     // /#page
-    link#rtb-booking-form-css(rel='stylesheet', href='/wp-content/plugins/restaurant-reservations/assets/css/booking-form.css')
-    link#pickadate-default-css(rel='stylesheet', href='/wp-content/plugins/restaurant-reservations/lib/simple-admin-pages/lib/pickadate/themes/default.css')
-    link#pickadate-date-css(rel='stylesheet', href='/wp-content/plugins/restaurant-reservations/lib/simple-admin-pages/lib/pickadate/themes/default.date.css')
-    link#pickadate-time-css(rel='stylesheet', href='/wp-content/plugins/restaurant-reservations/lib/simple-admin-pages/lib/pickadate/themes/default.time.css')
-    script(src='/wp-includes/js/imagesloaded.min.js')
-    script(src='/wp-content/themes/auberge/assets/js/scripts-global.js')
-    script(src='/wp-content/themes/auberge/assets/js/skip-link-focus-fix.js')
-    script(src='/wp-includes/js/wp-embed.min.js')
-    script(src='/wp-content/plugins/restaurant-reservations/lib/simple-admin-pages/lib/pickadate/picker.js')
-    script(src='/wp-content/plugins/restaurant-reservations/lib/simple-admin-pages/lib/pickadate/picker.date.js')
-    script(src='/wp-content/plugins/restaurant-reservations/lib/simple-admin-pages/lib/pickadate/picker.time.js')
-    script(src='/wp-content/plugins/restaurant-reservations/lib/simple-admin-pages/lib/pickadate/legacy.js')
+    link#rtb-booking-form-css(rel='stylesheet', href='/contrib/css/booking-form.css')
+    link#pickadate-default-css(rel='stylesheet', href='/contrib/css/pickadate/default.css')
+    link#pickadate-date-css(rel='stylesheet', href='/contrib/css/pickadate/default.date.css')
+    link#pickadate-time-css(rel='stylesheet', href='/contrib/css/pickadate/default.time.css')
+    script(src='/contrib/js/imagesloaded.min.js')
+    script(src='/contrib/js/scripts-global.js')
+    script(src='/contrib/js/skip-link-focus-fix.js')
+    script(src='/contrib/js/pickadate/picker.js')
+    script(src='/contrib/js/pickadate/picker.date.js')
+    script(src='/contrib/js/pickadate/picker.time.js')
+    script(src='/contrib/js/pickadate/legacy.js')
     script(src='/javascripts/reservations.js')
-    script(src='/wp-content/themes/auberge/assets/js/scripts-navigation.js')
-    script(src='/wp-content/plugins/restaurant-reservations/assets/js/booking-form.js')
+    script(src='/contrib/js/scripts-navigation.js')
+    script(src='/contrib/js/booking-form.js')
