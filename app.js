@@ -11,6 +11,15 @@ var reservations = require('./routes/reservations');
 
 const auth = require('./lib/auth.js');
 
+const configuration = {}
+
+
+
+
+if (1) {
+
+}
+
 var app = express();
 
 // Static assets.
