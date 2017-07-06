@@ -5,9 +5,9 @@ var logger = require('morgan');
 var cookieParser = require('cookie-parser');
 var bodyParser = require('body-parser');
 
-var index = require('./routes/index');
-var admin = require('./routes/admin');
-var reservations = require('./routes/reservations');
+let index = require('./routes/index');
+let admin = require('./routes/admin');
+let reservations = require('./routes/reservations');
 
 const auth = require('./lib/auth.js');
 
