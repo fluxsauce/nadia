@@ -11,6 +11,8 @@ module.exports = {
   "rules": {
     "no-multiple-empty-lines": "warn",
     "no-var": "error",
-    "prefer-const": "error"
+    "prefer-const": "error",
+    "valid-jsdoc": "error",
+    "require-jsdoc": "error",
   }
 };

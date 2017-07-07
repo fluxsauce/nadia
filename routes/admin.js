@@ -4,7 +4,7 @@ var debug = require('debug')('nadia:route:admin')
 const db = require('sqlite');
 const _ = require('lodash');
 
-/* GET debug listing. */
+/* GET admin listing. */
 router.get('/', function(req, res, next) {
   db.all('SELECT * FROM Reservation')
     .then((reservations) => {

@@ -15,9 +15,9 @@ The server runs on port 3000.
 
 There are three routes:
 
-* http://localhost:3000/ - homepage
-* http://localhost:3000/reservations - submit a reservation booking requests
-* http://localhost:3000/admin - view all reservation booking requests; basic auth login/password `admin`
+- http://localhost:3000/ - homepage
+- http://localhost:3000/reservations - submit a reservation booking requests
+- http://localhost:3000/admin - view all reservation booking requests; basic auth login/password `admin`
 
 The server persists using a SQLite3 database named `database.sqlite` in the site root.
 
@@ -35,6 +35,11 @@ npm run debug
 ```
 
 If you're using Windows, see https://www.npmjs.com/package/debug#windows-note to set the `DEBUG=nadia:*` environmental variable.
+
+## FAQ
+
+- Q: Why didn't you store the time submitted?
+  - A: I wanted to minimize the number of fields and simplify testing.
 
 ## Credits
 

@@ -9,7 +9,7 @@ let index = require('./routes/index');
 let admin = require('./routes/admin');
 let reservations = require('./routes/reservations');
 
-const auth = require('./lib/auth.js');
+const auth = require('./lib/middleware/auth.js');
 
 const configuration = {}
 

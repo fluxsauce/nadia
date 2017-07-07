@@ -10,7 +10,8 @@
   "scripts": {
     "debug": "DEBUG=nadia:* nodemon",
     "start": "node bin/www",
-    "eslint": "eslint"
+    "eslint": "eslint",
+    "test": "mocha"
   },
   "dependencies": {
     "basic-auth": "^1.1.0",
@@ -27,8 +28,10 @@
     "sqlite": "^2.8.0"
   },
   "devDependencies": {
+    "chai": "^4.0.2",
     "eslint": "^4.1.1",
     "express-generator": "^4.15.0",
+    "mocha": "^3.4.2",
     "nodemon": "^1.11.0"
   }
 }

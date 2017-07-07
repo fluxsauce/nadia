@@ -43,7 +43,7 @@
         .rtb-text.email
           label(for='email')
             | Email
-          input#rtb-email(type='email', name='email', value=(undefined === submission ? '' : submission.email), required='', aria-required='true')
+          input#rtb-email(type='text', name='email', value=(undefined === submission ? '' : submission.email), required='', aria-required='true')
         .rtb-text.phone
           label(for='phone')
             | Phone
