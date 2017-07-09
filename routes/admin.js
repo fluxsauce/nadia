@@ -1,12 +1,12 @@
 var express = require('express');
 var router = express.Router();
 var debug = require('debug')('nadia:route:admin')
-const db = require('sqlite');
 const _ = require('lodash');
+const reservations = require('../lib/reservations');
 
 /* GET admin listing. */
 router.get('/', function(req, res, next) {
-  db.all('SELECT * FROM Reservation')
+  reservations.getAll()
     .then((reservations) => {
       res.render('admin', {
         title: 'Booking Requests - Nadia\'s Garden',

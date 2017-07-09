@@ -40,11 +40,15 @@ If you're using Windows, see https://www.npmjs.com/package/debug#windows-note to
 
 - Q: Why didn't you store the time submitted?
   - A: I wanted to minimize the number of fields and simplify testing.
+- Q: Wouldn't it be easier if the form submitted a datetime string instead of building and parsing one?
+  - A: Yes, it would. However, it's easier logic for the form itself. Either way, someone has to do the work.
+- Q: Why did you mix a callback and a Promise in `lib/reservations.js`?
+  - A: `Joi` doesn't support Promises, but it does support callbacks. I wanted to demonstrate how to test both kinds of asynchronous code.
 
 ## Credits
 
 This is an adaptation of a WordPress site hosted at http://587672.youcanlearnit.net/
 
-The original site was archived with wget, then unrelated functionality was stripped out until only the home reservation pages remained. JavaScript and Stylesheet files were reorganized into logical directories and untouched. Then, the HTML files were converted into Jade / Pug templates using http://html2jade.org/
+The original site was archived with wget, then unrelated functionality was stripped out until only the home reservation pages remained. JavaScript and Stylesheet files were reorganized into logical directories and the contents should be untouched. Then, the HTML files were converted into Jade / Pug templates using http://html2jade.org/
 
 In short, the front end should be pretty unchanged from the original.
