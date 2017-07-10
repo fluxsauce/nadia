@@ -17,77 +17,6 @@ describe('Reservations Library', function() {
       // Stub to disable debugger.
       debug: debugStub
     });
-  })
-
-  describe('Create', function() {
-    let dbStub;
-
-    before(function() {
-      dbStub = sinon.stub(db, 'run').resolves({
-        stmt: {
-          lastID: 1349
-        }
-      });
-    });
-
-    after(function() {
-      db.run.restore();
-    });
-
-    it('should return the created reservation ID', function(done) {
-      reservations = proxyquire('../../../lib/reservations', {
-        debug: debugStub,
-        sqlite: dbStub
-      });
-
-      const reservation = new Reservation({
-        date: '2017/06/10',
-        time: '06:02 AM',
-        party: 4,
-        name: 'Family',
-        email: 'username@example.com'
-      });
-
-      reservations.create(reservation)
-        .then(lastID => {
-          lastID.should.deep.equal(1349);
-          done();
-        })
-        .catch(error => done(error));
-    });
-  });
-
-  describe('Save', function() {
-    let dbMock;
-
-    before(function() {
-      dbMock = sinon.mock(db);
-    });
-
-    after(function() {
-      dbMock.restore();
-    });
-
-    it('should only call the database once', function() {
-      dbMock.expects('run').once();
-
-      reservations = proxyquire('../../../lib/reservations', {
-        debug: debugStub,
-        sqlite: dbMock
-      });
-
-      const reservation = {
-        datetime: '2017-06-10T06:02:00.000Z',
-        party: 4,
-        name: 'Family',
-        email: 'username@example.com',
-        message: undefined,
-        phone: undefined,
-      };
-
-      reservations.save(reservation);
-      dbMock.verify();
-    })
   });
 
   describe('Validate', function() {
@@ -116,5 +45,105 @@ describe('Reservations Library', function() {
       return reservations.validate(reservation)
         .catch(error => error.should.be.an('error').and.not.be.null);
     });
+  });
+
+  describe('Create', function() {
+    let dbStub;
+    let validateSpy;
+
+    before(function() {
+      dbStub = sinon.stub(db, 'run').resolves({
+        stmt: {
+          lastID: 1349
+        }
+      });
+
+      reservations = proxyquire('../../../lib/reservations', {
+        debug: debugStub,
+        sqlite: dbStub
+      });
+    });
+
+    after(function() {
+      db.run.restore();
+    });
+
+    it('should call the validator with a transformed reservation once', function(done) {
+      const reservation = new Reservation({
+        date: '2017/06/10',
+        time: '06:02 AM',
+        party: 4,
+        name: 'Family',
+        email: 'username@example.com'
+      });
+
+      validateSpy = sinon.spy(reservations, 'validate');
+
+      reservations.create(reservation)
+        .then(() => {
+          validateSpy.calledOnce.should.be.ok;
+          validateSpy.calledWith({
+            datetime: '2017-06-10T06:02:00.000Z',
+            party: 4,
+            name: 'Family',
+            email: 'username@example.com',
+            message: undefined,
+            phone: undefined,
+          }).should.be.ok;
+          validateSpy.restore();
+          done();
+        })
+        .catch(error => done(error));
+    });
+
+    it('should return the created reservation ID', function(done) {
+      const reservation = new Reservation({
+        date: '2017/06/10',
+        time: '06:02 AM',
+        party: 4,
+        name: 'Family',
+        email: 'username@example.com'
+      });
+      reservations.create(reservation)
+        .then(lastID => {
+          lastID.should.deep.equal(1349);
+          done();
+        })
+        .catch(error => done(error));
+    });
+  });
+
+  describe('Save', function() {
+    let dbMock;
+
+    before(function() {
+      dbMock = sinon.mock(db);
+    });
+
+    after(function() {
+      dbMock.restore();
+    });
+
+    it('should only call the database once', function() {
+      dbMock.expects('run')
+        .once();
+
+      reservations = proxyquire('../../../lib/reservations', {
+        debug: debugStub,
+        sqlite: dbMock
+      });
+
+      const reservation = {
+        datetime: '2017-06-10T06:02:00.000Z',
+        party: 4,
+        name: 'Family',
+        email: 'username@example.com',
+        message: undefined,
+        phone: undefined,
+      };
+
+      reservations.save(reservation);
+      dbMock.verify();
+    })
   });
 });
