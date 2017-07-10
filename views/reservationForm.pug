@@ -7,7 +7,7 @@
           li!= error
   if success
     .rtb-message
-      | Thanks, your booking request is waiting to be confirmed. Updates will be sent to the email address you provided.
+      | Thanks, your booking request ##{reservationId} is waiting to be confirmed. Updates will be sent to the email address you provided.
   else
     form(method='POST', action='')
       fieldset.reservation

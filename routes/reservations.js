@@ -10,10 +10,10 @@ router.get('/', function(req, res, next) {
 
 router.post('/', function(req, res, next) {
   const reservation = new Reservation(req.body);
-  reservations.validate(reservation)
-    .then(reservations.save)
-    .then(() => res.render('reservations', {
+  reservations.create(reservation)
+    .then(reservationId => res.render('reservations', {
       success: true,
+      reservationId
     }))
     .catch(err => {
       debug(err.message, req.body);
