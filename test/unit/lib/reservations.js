@@ -2,20 +2,23 @@ process.env['DEBUG'] = 'nadia:*';
 
 const proxyquire = require('proxyquire');
 const sinon = require('sinon');
-const should = require('chai').should();
+const chai = require('chai');
+const should = chai.should();
+const sinonChai = require('sinon-chai');
 const Reservation = require('../../../lib/schema/reservation');
 const db = require('sqlite');
 
+chai.use(sinonChai);
+
 describe('Reservations Library', function() {
-  const debugStub = function() {
+  const disableDebugStub = function() {
     return sinon.stub();
   }
   let reservations;
 
   before(function() {
     reservations = proxyquire('../../../lib/reservations', {
-      // Stub to disable debugger.
-      debug: debugStub
+      debug: disableDebugStub
     });
   });
 
@@ -59,13 +62,13 @@ describe('Reservations Library', function() {
       });
 
       reservations = proxyquire('../../../lib/reservations', {
-        debug: debugStub,
+        debug: disableDebugStub,
         sqlite: dbStub
       });
     });
 
     after(function() {
-      db.run.restore();
+      dbStub.restore();
     });
 
     it('should call the validator with a transformed reservation once', function(done) {
@@ -81,15 +84,16 @@ describe('Reservations Library', function() {
 
       reservations.create(reservation)
         .then(() => {
-          validateSpy.calledOnce.should.be.ok;
-          validateSpy.calledWith({
-            datetime: '2017-06-10T06:02:00.000Z',
-            party: 4,
-            name: 'Family',
-            email: 'username@example.com',
-            message: undefined,
-            phone: undefined,
-          }).should.be.ok;
+          validateSpy.should
+            .have.been.calledOnce
+            .and.been.calledWith({
+              datetime: '2017-06-10T06:02:00.000Z',
+              party: 4,
+              name: 'Family',
+              email: 'username@example.com',
+              message: undefined,
+              phone: undefined,
+            });
           validateSpy.restore();
           done();
         })
@@ -129,7 +133,7 @@ describe('Reservations Library', function() {
         .once();
 
       reservations = proxyquire('../../../lib/reservations', {
-        debug: debugStub,
+        debug: disableDebugStub,
         sqlite: dbMock
       });
 

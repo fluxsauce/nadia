@@ -1,4 +1,5 @@
-const should = require('chai').should();
+const chai = require('chai');
+const should = chai.should();
 const Reservation = require('../../../../lib/schema/reservation');
 
 describe('Reservation Schema', function() {
