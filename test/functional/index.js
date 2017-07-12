@@ -39,4 +39,14 @@ describe('/', function() {
         });
     });
   });
+  describe('DELETE', function() {
+    it('should fail to delete the homepage', function(done) {
+      chai.request(app)
+        .delete('/')
+        .end(function(err, res) {
+          res.should.have.status(500);
+          done();
+        });
+    });
+  });
 });

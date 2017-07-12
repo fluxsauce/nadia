@@ -33,10 +33,13 @@ describe('app.js', function() {
 
   describe('errors', function() {
     it('should return a 404 for a missing page in production', function(done) {
+      process.env['NODE_ENV'] = 'production';
       chai.request(app)
         .get('/bananas')
         .end(function(err, res) {
           res.should.have.status(404);
+          res.should.not.contain('app.js');
+          process.env['NODE_ENV'] = env;
           done();
         });
     });
