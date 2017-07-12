@@ -18,6 +18,7 @@ describe('/reservations', function() {
   let app;
 
   before(function() {
+    // Not stubbing existing because of the use of global.
     dbStub = {
       run: function() {
         return Promise.resolve({
@@ -51,7 +52,7 @@ describe('/reservations', function() {
   });
 
   describe('GET', function() {
-    it('responds with status 200', function(done) {
+    it('should return the reservations form', function(done) {
       chai.request(app)
         .get('/reservations')
         .end(function(err, res) {
