@@ -1,10 +1,9 @@
-process.env['DEBUG'] = 'nadia:*';
-
 const chai = require('chai');
 const chaiHttp = require('chai-http');
 const proxyquire = require('proxyquire');
 const sinon = require('sinon');
 const db = require('sqlite');
+const logger = require('morgan');
 
 chai.use(chaiHttp);
 
@@ -16,16 +15,21 @@ describe('/reservations', function() {
       lastID: 1349
     }
   });
+  const loggerStub = sinon.stub(logger, 'morgan').returns(function(req, res, next) {
+    next();
+  });
   let app;
 
   before(function() {
     app = proxyquire('../../app', {
       sqlite: dbStub,
+      morgan: loggerStub,
     });
   });
 
   after(function() {
     dbStub.restore();
+    loggerStub.restore();
   });
 
   describe('GET', function() {
@@ -56,6 +60,23 @@ describe('/reservations', function() {
           res.should.have.status(200);
           done(err);
         });
-    })
+    });
+    it('should reject an invalid reservation request', function(done) {
+      chai.request(app)
+        .post('/reservations')
+        .set('content-type', 'application/x-www-form-urlencoded')
+        .send({
+          date: '2017/06/10',
+          time: '06:02 AM',
+          party: 'bananas',
+          name: 'Family',
+          email: 'username@example.com'
+        })
+        .end(function(err, res) {
+          res.text.should.contain('Sorry, there was a problem with your booking request.');
+          res.should.have.status(400);
+          done();
+        });
+    });
   })
 });
