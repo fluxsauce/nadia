@@ -1,5 +1,3 @@
-process.env['DEBUG'] = 'nadia:*';
-
 const chai = require('chai');
 const chaiHttp = require('chai-http');
 const proxyquire = require('proxyquire');
