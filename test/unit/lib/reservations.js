@@ -1,5 +1,3 @@
-process.env['DEBUG'] = 'nadia:*';
-
 const proxyquire = require('proxyquire');
 const sinon = require('sinon');
 const chai = require('chai');
@@ -7,19 +5,22 @@ const should = chai.should();
 const sinonChai = require('sinon-chai');
 const Reservation = require('../../../lib/schema/reservation');
 const db = require('sqlite');
+const debug = require('debug');
 
 chai.use(sinonChai);
 
 describe('Reservations Library', function() {
-  const disableDebugStub = function() {
-    return sinon.stub();
-  }
+  const debugStub = sinon.stub(debug, 'createDebug').returns(sinon.stub());
   let reservations;
 
   before(function() {
     reservations = proxyquire('../../../lib/reservations', {
-      debug: disableDebugStub
+      debug: debugStub
     });
+  });
+
+  after(function() {
+    debugStub.restore();
   });
 
   describe('Validate', function() {
@@ -62,7 +63,7 @@ describe('Reservations Library', function() {
       });
 
       reservations = proxyquire('../../../lib/reservations', {
-        debug: disableDebugStub,
+        debug: debugStub,
         sqlite: dbStub
       });
     });
@@ -133,7 +134,7 @@ describe('Reservations Library', function() {
         .once();
 
       reservations = proxyquire('../../../lib/reservations', {
-        debug: disableDebugStub,
+        debug: debugStub,
         sqlite: dbMock
       });
 

@@ -1,5 +1,3 @@
-process.env['DEBUG'] = 'nadia:*';
-
 const chai = require('chai');
 const chaiHttp = require('chai-http');
 const proxyquire = require('proxyquire');
@@ -18,7 +16,6 @@ describe('/reservations', function() {
   let app;
 
   before(function() {
-    // Not stubbing existing because of the use of global.
     dbStub = {
       run: function() {
         return Promise.resolve({
