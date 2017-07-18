@@ -3,7 +3,7 @@ const should = chai.should();
 const Reservation = require('../../../../lib/schema/reservation');
 
 describe('Reservation Schema', function() {
-  describe('Date and Time Combination', function() {
+  context('Date and Time Combination', function() {
     it('should return a ISO 8601 date and time with valid input', function() {
       const date = '2017/06/10';
       const time = '06:02 AM';
@@ -20,7 +20,7 @@ describe('Reservation Schema', function() {
     });
   });
 
-  describe('Constructor', function() {
+  context('Constructor', function() {
     it('should create a Reservation with valid fields', function() {
       const valid = {
         date: '2017/06/10',
@@ -44,7 +44,7 @@ describe('Reservation Schema', function() {
     });
   });
 
-  describe('Validator', function() {
+  context('Validator', function() {
     it('should pass a valid reservation with no optional fields', function(done) {
       const reservation = new Reservation({
         date: '2017/06/10',

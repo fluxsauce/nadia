@@ -31,7 +31,7 @@ describe('app.js', function() {
     loggerStub.restore();
   });
 
-  describe('errors', function() {
+  context('errors', function() {
     it('should return a 404 for a missing page in production', function(done) {
       process.env['NODE_ENV'] = 'production';
       chai.request(app)

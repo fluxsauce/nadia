@@ -37,7 +37,7 @@ describe('/admin', function() {
     loggerStub.restore();
   });
 
-  describe('GET', function() {
+  context('GET', function() {
     it('should allow access with a password', function(done) {
       chai.request(app)
         .get('/admin')
@@ -47,6 +47,7 @@ describe('/admin', function() {
           done(err);
         });
     });
+
     it('should reject access without a password', function(done) {
       chai.request(app)
         .get('/admin')

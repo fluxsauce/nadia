@@ -23,7 +23,7 @@ describe('Reservations Library', function() {
     debugStub.restore();
   });
 
-  describe('Validate', function() {
+  context('Validate', function() {
     it('should pass a valid reservation with no optional fields', function() {
       const reservation = new Reservation({
         date: '2017/06/10',
@@ -51,7 +51,7 @@ describe('Reservations Library', function() {
     });
   });
 
-  describe('Create', function() {
+  context('Create', function() {
     let dbStub;
     let validateSpy;
 
@@ -118,7 +118,7 @@ describe('Reservations Library', function() {
     });
   });
 
-  describe('Save', function() {
+  context('Save', function() {
     let dbMock;
 
     before(function() {

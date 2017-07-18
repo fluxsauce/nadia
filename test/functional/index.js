@@ -28,7 +28,7 @@ describe('/', function() {
     loggerStub.restore();
   });
 
-  describe('GET', function() {
+  context('GET', function() {
     it('should contain the word "Nadia"', function(done) {
       chai.request(app)
         .get('/')
@@ -39,7 +39,8 @@ describe('/', function() {
         });
     });
   });
-  describe('DELETE', function() {
+
+  context('DELETE', function() {
     it('should fail to delete the homepage', function(done) {
       chai.request(app)
         .delete('/')

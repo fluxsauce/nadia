@@ -48,7 +48,7 @@ describe('/reservations', function() {
     loggerStub.restore();
   });
 
-  describe('GET', function() {
+  context('GET', function() {
     it('should return the reservations form', function(done) {
       chai.request(app)
         .get('/reservations')
@@ -59,7 +59,8 @@ describe('/reservations', function() {
         });
     });
   });
-  describe('POST', function() {
+
+  context('POST', function() {
     it('should accept a valid reservation request', function(done) {
       chai.request(app)
         .post('/reservations')
@@ -77,6 +78,7 @@ describe('/reservations', function() {
           done(err);
         });
     });
+
     it('should reject an invalid reservation request', function(done) {
       chai.request(app)
         .post('/reservations')
